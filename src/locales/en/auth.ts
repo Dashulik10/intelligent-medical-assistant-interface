@@ -1,0 +1,35 @@
+export const authConfig = {
+    name: "Medical assistant access",
+    description: "Manage your AI assistant account",
+    tabs: {
+        login: "Login",
+        signup: "Sign Up",
+    },
+    login: {
+        title: "Welcome Back",
+        description: "Sign in to access your diagnostic assistant",
+        emailLabel: "Email",
+        emailPlaceholder: "doctor@hospital.com",
+        passwordLabel: "Password",
+        passwordPlaceholder: "••••••••",
+        submitButton: "Sign In",
+        rememberMe: "Remember me",
+        forgotPassword: "Forgot password?",
+    },
+    signup: {
+        title: "Create Account",
+        description: "Start your journey with MedMind AI",
+        nameLabel: "Full Name",
+        namePlaceholder: "Dr. Jane Smith",
+        emailLabel: "Email",
+        emailPlaceholder: "doctor@hospital.com",
+        passwordLabel: "Password",
+        passwordPlaceholder: "Create a password",
+        submitButton: "Create Account",
+        termsText: "By signing up, you agree to our Terms of Service and Privacy Policy",
+    },
+    sso: {
+        dividerText: "Or continue with",
+        buttonText: "SSO / Medical ID",
+    },
+};

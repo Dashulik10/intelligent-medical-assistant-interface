@@ -1,21 +1,31 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import { Inter } from "next/font/google";
+import "../styles/globals.css";
+import { LanguageProvider } from "@/context/LanguageContext";
+import { ThemeProvider } from "@/components/ThemeProvider";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "MedMind AI | For Doctors",
-    description: "Advanced AI Assistant for Healthcare Professionals",
+    title: "Intelligent Medical Assistant",
+    description: "AI-Powered Diagnostic Assistant",
 };
 
-export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
-    children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="en">
-        <body className="antialiased bg-slate-50">
-        {children}
-        </body>
+        <html lang="en" suppressHydrationWarning>
+            <body className={inter.className}>
+                <LanguageProvider>
+                    <ThemeProvider
+                        attribute="class"
+                        defaultTheme="system"
+                        enableSystem
+                        disableTransitionOnChange
+                    >
+                        {children}
+                    </ThemeProvider>
+                </LanguageProvider>
+            </body>
         </html>
     );
 }
